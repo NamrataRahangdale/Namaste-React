@@ -1,0 +1,81 @@
+1. What is Microservice?
+Ans- Microservices are an architectural way of software development where the application is divided into small components (service). It allows the application to break into small parts which helps in solving debugging issues.
+2. What is Monolith Architecture?
+Ans- A monolithic architecture is a traditional software development model that uses one code base to perform multiple business functions. All the software components in a monolithic system are interdependent due to the data exchange mechanisms within the system. It’s restrictive and time-consuming to modify monolithic architecture as small changes impact large areas of the code base.
+3. What is the defference between Monolith and Microservice?
+Ans- Monolithic architecture
+* Monolithic architecture is built as one large system and is usually one code-base.
+* It is not easy to scale based on demand.
+* It has shared database.
+* Large code base makes IDE slow and build time gets increase.
+* It extremely difficult to change technology or language or framework because everything is tightly coupled and depend on each other.
+Microservices architecture
+* Microservices architecture is built as small independent module based on business functionality.
+* It is easy to scale based on demand.
+* Each project and module has their own database.
+* Each project is independent and small in size. So overall build and development time gets decrease.
+* Easy to change technology or framework because every module and project is independent
+4. Why do we need a useEffect Hook?
+Ans- The useEffect() Hook is a built-in Hook in React that allows functional components to perform side effects and handling lifecycle events in your React components.
+
+5. What is Optional Chaining?
+Ans- Optional Chaining is a powerful feature in React that can make working with deeply nested objects much easier. When dealing with large data objects from external APIs, it can be challenging to access object properties without explicit checks for null or undefined values. Optional Chaining allows you to safely access these properties without the risk of errors.
+
+Let’s say you have a component that receives a prop called “user” that contains an object with a property called “address.” To access the “street” property of the “address” object, you might write code like this:
+const street = user.address.street;
+This code assumes that both “user” and “user.address” are not null or undefined. If either of those values is null or undefined, the code will throw an error and crash your application.
+To avoid these errors, you might write code like this:
+const street = user && user.address && user.address.street;
+
+The Solution: Optional Chaining
+With Optional Chaining, you can write safe, efficient, and maintainable code. To use Optional Chaining, add a question mark (?) before each property you want to access. For example, to access the “street” property of the “address” object using Optional Chaining, you can write:
+const street = user?.address?.street;
+This code will only access the “street” property if both “user” and “user.address” are not null or undefined. If either of those values is null or undefined, the code will gracefully return undefined instead of throwing an error.
+
+6. What is Shimmer UI?
+Ans- Shimmer Ui resembles the page’s actual UI. So users will understand how quickly the web or mobile app will load even before the containt has shown up.
+It is Kind of we load fake page untile we get the actual data from the API.
+7. What is the defference between JS expression and JS statement?
+Ans- 
+* Expressions can be assigned or used as operands, while statements can only be declared.
+* Statements create side effects to be useful, while expressions are values or execute to values.
+* Expressions are unique in meaning, while statements are two-sided in execution. For example, 1 has a certain value while go( ) may be executed or not.
+* Statements are the whole structure, while expressions are the building blocks. For example, a line or a block of code is a statement.
+8. What is the conditional rendering, explain with a code example?
+Ans- Conditional rendering is a concept often used in web development to conditionally display or render certain content or components based on specific conditions or criteria. It allows you to control what gets displayed on a web page based on variables, user interactions, or other dynamic factors. In most cases, conditional rendering is achieved using programming constructs like if statements or ternary operators.
+Ex- Suppose you have a simple React component that renders a greeting message based on whether a user is logged in or not.
+import React, { Component } from 'react';
+
+class Hello extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false // Initially, the user is not logged in
+    };
+  }
+
+  render() {
+    // Conditionally render a greeting based on the isLoggedIn state
+    if (this.state.isLoggedIn) {
+      return <p>Welcome, User!</p>;
+    } else {
+      return <p>Please log in to continue.</p>;
+    }
+  }
+}
+
+export default Hello;
+
+In this example, we have a Hello component with a isLoggedIn state variable that determines what message to display. If isLoggedIn is true, it displays a welcome message, and if it's false, it displays a message prompting the user to log in.
+
+9. What is CROS?
+Ans- CORS, which stands for Cross-Origin Resource Sharing, is a security feature implemented by web browsers to control requests made by web pages from one domain (or origin) to another domain. It is a critical component of web security and helps protect web users from potential security vulnerabilities.
+10. What is async and await?
+Ans- async and await are features in modern programming languages, primarily used in asynchronous programming to simplify working with asynchronous code and promises. 
+* async is used to declare a function as asynchronous, which means it will always return a promise.
+* await is used within an async function to pause the execution of the function until a promise is resolved, allowing you to work with the result of that promise as if it were a synchronous operation.
+11. What is the use of ‘const json = await data.json();’ in getRestaurants?
+Ans- ‘const json = await data.json();’  is used to parse the response from an HTTP request (API call) into a JavaScript object.
+* Data is the result of HTTP request using Js. It represents the response from the server.
+* The json() method is called on the response object (data) to parse the response body as JSON.
+* The await keyword is used to pause the execution of the function until the promise returned by data.json() is resolved.
