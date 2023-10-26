@@ -1,0 +1,84 @@
+1. What are the various ways to add images into our app? Explain with Code Examples.
+Ans- In a React app, there are several ways to add images to your application. Here are some of the most common methods, along with code examples:
+1.Importing Images:
+You can import images directly into your React component and use them as variables. This is the most straightforward and recommended approach.
+import React from 'react';
+import logo from './logo.png'; // Import the image
+
+function App() {
+  return (
+    <div>
+      <img src={logo} alt="Logo" />
+    </div>
+  );
+}
+
+export default App;
+2. Using a Public Folder:
+You can place your images in the public folder of your React app and reference them using the public URL. This method is useful for external images or when you want to include images without bundling them with your JavaScript.
+function App() {
+  return (
+    <div>
+      <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Logo" />
+    </div>
+  );
+}
+
+export default App;
+3. Inline Base64 Images:
+You can embed small images directly in your JavaScript code as base64-encoded data URLs. This is suitable for tiny images like icons.
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8xwAB/ABw9p5bAAAAASUVORK5CYII="
+        alt="Base64 Image"
+      />
+    </div>
+  );
+}
+
+export default App;
+4. External Image URLs:
+You can also display images from external sources by directly specifying the image URL.
+function App() {
+  return (
+    <div>
+      <img src="https://example.com/path-to-your-image.jpg" alt="External Image" />
+    </div>
+  );
+}
+
+export default App;
+5. Using CSS for Background Images:
+You can use CSS to set background images in your components. This approach is often used for decorative images or backgrounds.
+import React from 'react';
+import './App.css'; // Import your CSS
+
+function App() {
+  return (
+    <div className="app">
+      <h1>Welcome to My App</h1>
+    </div>
+  );
+}
+
+export default App;
+
+In your CSS file (App.css):
+.app {
+  background-image: url('path-to-your-image.jpg');
+  background-size: cover;
+}
+2. What would happen if we do console.log(useState())?
+Ans- If we call console.log(useState()) in a JavaScript application, we would encounter an issue. This is because useState() is a function typically used in React to manage state within functional components, and it should not be used in this manner.
+3. How will useEffect behave if we don’t add a dependency array?
+Ans- When we use useEffect without a dependency array, the effect will run after every render cycle of the component. This means that it will be executed both on the initial render and after every subsequent re-render, regardless of whether any specific state or props have changed.
+This can lead to performance issues if the effect contains operations that are not meant to be repeated on every render, as it can lead to unnecessary computations, API calls, or other side effects happening too frequently. 
+4. What is SAP?
+Ans- SAP stands for "Systems, Applications, and Products in Data Processing." SAP is best known for its Enterprise Resource Planning (ERP) software, which helps organizations manage and streamline their business operations. SAP's software applications cover a wide range of business functions, and they are used by organizations of all sizes and industries to facilitate various business processes.
+5. What is the difference between Client Side routing and Server Side routing?
+Ans- In client-side routing, routing decisions are made and executed within the web browser on the client's side.
+In server-side routing, routing decisions are made and executed on the web server.We make network call and the page is coming from the server in server-side routing.
